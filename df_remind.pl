@@ -1,10 +1,7 @@
 #Filesystem reporter.
 #Run on a cron job and report to email 
 #or some other remote service
-#
-#
-#
-#
+
 use Filesys::Df;
 
 use strict;
@@ -21,6 +18,7 @@ sub kb_to_gb  {
   }
 }
 
+#-----------------------------------------------------
 #Generate human readable text from Df output.        +
 #Returns                                             +
 #Path                                                +
@@ -47,10 +45,9 @@ sub generate_hr_text  {
 
    $fmt_str = "Path: $df_path\n" . "Percentage Used: $percentage\%\n" . "Blocks Free: $blocks_free_gb GB\n" . "Blocks Used: $blocks_used_gb GB\n" . "Total Blocks: $blocks_total_gb GB\n";
    return $fmt_str;
-
   }
-
 }
+
 #---------------------
 #Entry point         +
 #---------------------
